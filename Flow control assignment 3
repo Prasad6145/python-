@@ -1,0 +1,193 @@
+#Fill in the blanks with the boolean operators in the following code snippet to get the desired output 
+
+result1 = None
+if True and True:  
+    result1 = True
+else:
+    result1 = False
+print("Result 1:", result1)  
+
+result2 = None
+if (1 > 2) or (55 < 54): 
+    result2 = True
+else:
+    result2 = False
+print("Result 2:", result2)  
+
+result3 = None
+if (55 / 2) or True:  
+    result3 = True
+else:
+    result3 = False
+print("Result 3:", result3)  
+
+result4 = None
+if False and (10 > 5): 
+    result4 = True
+else:
+    result4 = False
+print("Result 4:", result4) 
+
+#Create a program that asks the user to enter the net worth of Mark Zuckerberg and display the specific message as mentioned in the table below according to the input from the user.
+#Note : Make sure you enter the appropriate message in input function that assists user in entering the values.
+#Note : Do not enter commas when entering the number.
+#Net Worth	Display
+#= 54500000000	That's 54.5 billion!
+#< 54500000000	That's not much!
+#> 54500000000	I'll make more when I graduate
+
+n=int(input())
+if n==54500000000:
+  print("That's 54.5 billion!")
+elif n<54500000000:
+  print("That's not much!")
+else:
+  print("I'll make more when I graduate")
+
+
+#Create a program to accept the cost price of a bike and display the total price of the bike including the tax to be paid according to the following criteria :
+#Note : Make sure you enter the appropriate message in input function that assists user in entering the values.
+#Cost price (in Rs)	Tax
+#> 100000	15 %
+#> 50000 and <= 100000	10%
+#<= 50000	5%
+
+
+cost_price = float(input("Enter the cost price of the bike in Rs: "))
+
+tax = 0
+
+if cost_price > 100000:
+    tax = 0.15 
+elif cost_price > 50000:
+    tax = 0.10 
+else:
+    tax = 0.05 
+
+tax_amount = cost_price * tax
+total_price = cost_price + tax_amount
+
+print(f"\nCost Price of the Bike: Rs. {cost_price:.2f}")
+print(f"Applicable Tax Rate: {tax * 100:.0f}%")
+print(f"Tax Amount: Rs. {tax_amount:.2f}")
+print(f"Total Price of the Bike (Including Tax): Rs. {total_price:.2f}")
+
+
+#A student needs to have an attendance of atleast 75% to be allowed to sit for the exams. Create a program to check if the student satisfies this attendance criteria to sit for the exams by taking 2 inputs from the user and display the necessary output message along with the attendance in percentage using the print function.
+#Note : Make sure you enter the appropriate message in input function that assists user in entering the values.
+#Hint : Take the user inputs for the following :
+#Number of classes held
+#Number of classes attended.
+classes_held=int(input())
+classes_attended=int(input()) 
+if classes_attended > classes_held or classes_held <= 0 or classes_attended < 0:
+    print("Invalid input! Please ensure classes attended is not greater than classes held, and both are non-negative.")
+else:
+    attendance_percentage = (classes_attended / classes_held) * 100
+
+    if attendance_percentage >= 75:
+        print(f"\nYour attendance is {attendance_percentage:.2f}%.")
+        print("You are allowed to sit for the exams.")
+    else:
+        print(f"\nYour attendance is {attendance_percentage:.2f}%.")
+        print("You are not allowed to sit for the exams due to insufficient attendance.")
+
+
+
+#Create a program that displays the wages of worker depending on their age, gender (‘M’, ‘F’) and number of days they work accodring to the criteria mentioned in the table below:
+#Note : Make sure you enter the appropriate message in input function that assists user in entering the values.
+#Age Group	Gender	Daily Wages
+#>= 18 and < 30	M	700
+#F	750
+#>= 30 and <= 40	M	800
+#F	850
+
+age=int(input())
+gender=input()
+days=int(input())
+if age>=18 and age<30 and gender=='M':
+  print(days*700)
+  print('M')
+elif age>=18 and age<30 and gender=='F':
+  print(days*750)
+  print('F')
+elif age>=30 and age<=40 and gender=='M':
+  print(days*800)
+  print('M')
+elif age>=30 and age<=40 and gender=='F':
+  print(days*850)
+  print('F')
+else:
+  print('invalid input')
+
+
+
+#Create a program to check if a given year is leap year or not.
+#Note : Make sure you enter the appropriate message in input function that assists user in entering the values.
+#Note : Google to check all the conditions for a year to be a leap year.
+
+year=int(input())
+if year%4==0:
+  if year%100==0:
+    if year%400==0:
+      print('leap year')
+    else :
+      print("not a leap year")
+  else :
+    print('leap year')
+else:
+  print("not a leap year")    
+
+
+#Create a program that accepts the number of days from the user and calculates the charge for library according to the following table :
+#Note : Make sure you enter the appropriate message in input function that assists user in entering the values.
+#Number of Days	Cost / day
+#Till 5 days	Rs 2 / day
+#6 to 10 days	Rs 3 / day
+#11 to 15 days	Rs 4 / day
+#After 15 days	Rs 5 / day
+
+days=int(input())
+if days<=5:
+  print(days*2)
+  print('rs 2/day') 
+  print('till 5 days')
+elif days>=6 and days<=10:
+  print(days*3)
+  print('Rs 3/day')
+  print('6 to 10 days')
+elif days>=11 and days<=15:
+  print(days*4)
+  print('Rs 4/day')
+elif days>=16:
+  print(days*5)
+  print('Rs 5/day')
+  print('after 15 days')
+
+
+
+#Create a program that accepts the electric units from user and calculates the bill according to the following rates:
+#Note : Make sure you enter the appropriate message in input function that assists user in entering the values.
+#Example :
+#Number of Unit :550
+#Total Bill : 0 +400+1250 = 1650
+#Range of Units	Cost / unit
+#First 100	Free
+#Next 200	Rs 2 / unit
+#Above 300	Rs 5 / unit
+
+units = int(input())
+bill = 0
+
+if units > 300:
+    bill += (units - 300) * 5
+    bill += 200 * 2  
+    bill += 0        
+elif units > 100:
+    bill += (units - 100) * 2
+    bill += 0       
+else:
+    bill += 0
+
+print(f"\nNumber of Units Consumed: {units}")
+print(f"Total Bill: Rs {bill}")
